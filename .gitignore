@@ -1,6 +1,7 @@
 *.class
 *.pyc
 *.pyo
+*.bak
 .deployables
 static/pruebas/tmp.js
 static/extjs-4.1.x
@@ -9,3 +10,5 @@ src/settings_production.py
 static/extjs
 static/js/app-all.js
 static/all-classes.js
+coverage.xml
+secret_key.txt

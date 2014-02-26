@@ -58,7 +58,6 @@ Ext.define('ProtoUL.UI.FormController', {
                     me._waitForDetails(me, detCode);
                     _SM.errorMessage('ProtoDefinition Error :', detCode + ': protoDefinition not found');
                 }
-
             };
 
             // PreCarga los detalles
@@ -67,7 +66,10 @@ Ext.define('ProtoUL.UI.FormController', {
             }
 
         };
-
+		
+		// This increase performance.
+		Ext.suspendLayouts();
+		
         // lo marca como cargado
         this.myMetaDict[this.myMeta.viewCode] = false;
 
@@ -93,7 +95,7 @@ Ext.define('ProtoUL.UI.FormController', {
         if (!me.loaded) {
             me._waitForDetails(me);
         }
-
+		Ext.resumeLayouts(true);
     },
 
     _waitForDetails: function(me, detCode) {
