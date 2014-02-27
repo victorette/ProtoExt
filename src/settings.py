@@ -96,9 +96,6 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = "z7jc&(scfm-c5lt-h#(m*epqis54tc)lxm=g+&5+ud$3w783dx"
-    
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -136,6 +133,9 @@ EMAIL_USE_TLS = True
 
 if DEBUG :
     from settings_development import *
+    with open( PPATH + '/src/ProtoExt/secret_key.txt') as f:
+        SECRET_KEY = f.read().strip()
 else :
     from settings_production import *
-
+    with open('/etc/secret_key.txt') as f:
+        SECRET_KEY = f.read().strip()
