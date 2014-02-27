@@ -20,7 +20,7 @@ Ext.define('ProtoUL.UI.ConfigController', {
             var myAction = Ext.create('Ext.Action', {
                 text: name,
                 iconCls: icon,
-				prCfgAction: action,
+                prCfgAction: action,
                 scope: me,
                 handler: onClickConfigAction
             });
@@ -46,7 +46,7 @@ Ext.define('ProtoUL.UI.ConfigController', {
         }
 
         // Modificacion del entorno
-        if (myConfigOpts.length > 0) { // && !Ext.isIE8
+        if (myConfigOpts.length > 0) {// && !Ext.isIE8
             __MasterDetail.tbConfigOpts = Ext.create('Ext.toolbar.Toolbar', {
                 dock: 'top',
                 hidden: true,
@@ -204,4 +204,4 @@ Ext.define('ProtoUL.UI.ConfigController', {
 
     }
 
-});
+}); 

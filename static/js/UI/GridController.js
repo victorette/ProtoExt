@@ -160,34 +160,31 @@ Ext.define('ProtoUL.UI.GridController', {
         }
     }, 
 
-    setEditMode: function(bEdit) {
+    setEditMode : function(bEdit) {
 
-        // @formatter:off
-        var me = this, 
-            perms = _SM._UserInfo.perms[this.myMeta.viewCode], 
-            myExtGrid = me.myGrid._extGrid;
-        // @formatter:on
+        var me = this, bRef, record, stRec, perms, myExtGrid;
 
-        if (!(perms['add'] || perms['change'] || perms['delete'] )) {
-            return;
-        }
-        // if ( ! _SM._UserInfo.isStaff  ) return
-
+        perms = _SM._UserInfo.perms[this.myMeta.viewCode];
+        myExtGrid = me.myGrid._extGrid;
         this.myGrid.editable = bEdit;
 
-        var bRef = bEdit && me.myGrid.selected; 
 
-        if ( bRef ) { 
-            var record = me.myGrid.selected, 
-                stRec = record.get('_ptStatus'); 
+        if (!(perms['add'] || perms['change'] || perms['delete'] )) {
+            bRef = false; 
+        } else { 
 
-            bRef = ! (stRec && stRec === _SM._ROW_ST.REFONLY) ; 
-        }
+            bRef = bEdit && me.myGrid.selected;
+            if (bRef) {
+                record = me.myGrid.selected;
+                stRec = record.get('_ptStatus');
+                bRef = !(stRec && stRec === _SM._ROW_ST.REFONLY);
+            }
 
-        this.setEditToolBar( bEdit, bRef, perms );
-
+        }    
+        this.setEditToolBar(bEdit, bRef, perms);
 
     },
+
 
     setEditToolBar: function( bEdit, bRef, perms ) {
 
