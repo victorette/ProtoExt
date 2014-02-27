@@ -5,7 +5,7 @@ import os.path
 PPATH = os.path.abspath( os.path.join( os.path.dirname(__file__), os.pardir )).replace('\\','/')
 
 if PPATH.startswith('/'):
-    EXT_PATH = '/u/data/ExtJs'
+    EXT_PATH = '/opt/data/ExtJs'
 else:
     EXT_PATH = 'd:/data/ExtJs'
 
@@ -66,7 +66,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
