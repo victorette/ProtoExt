@@ -5,7 +5,7 @@ import os.path
 PPATH = os.path.abspath( os.path.join( os.path.dirname(__file__), os.pardir )).replace('\\','/')
 
 if PPATH.startswith('/'):
-    EXT_PATH = '/u/data/ExtJs'
+    EXT_PATH = '/opt/data/ExtJs'
 else:
     EXT_PATH = 'd:/data/ExtJs'
 

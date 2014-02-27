@@ -12,7 +12,7 @@
 //document.getElementById('Idbody').innerHTML = "";
 
 Ext.Loader.setConfig({enabled: true});
-Ext.Loader.setPath('Ext.ux', 'static/extjs/examples/ux');
+// Ext.Loader.setPath('Ext.ux', 'static/extjs/examples/ux');
 
 Ext.application({
     name: 'ProtoUL',
@@ -22,9 +22,6 @@ Ext.application({
         'Ext.window.MessageBox',
         'Ext.toolbar.Paging', 
         'Ext.layout.container.Border',
-        
-        'Ext.ux.ToolbarDroppable',
-        'Ext.ux.BoxReorderer',
         
         'Ext.util.Cookies', 
         'Ext.Ajax',
