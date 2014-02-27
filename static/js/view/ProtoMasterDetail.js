@@ -14,6 +14,7 @@ Ext.define('ProtoUL.view.ProtoMasterDetail', {
     // Estados iniciales
     editable : false,
     autoSync : true,
+    autoEdit : true,
 
     // @es definido solamente cuando es una grilla dependiente  ( detalle o promoted )
     isPromoted : false,
@@ -220,43 +221,40 @@ Ext.define('ProtoUL.view.ProtoMasterDetail', {
 
         // Apagar las barras ( hacen parte de la grilla menos tbTabs y tbDetails )
         // setDisabled( me.tbTabs )
-        setDisabled( me.tbFilters );
-        setDisabled( me.tbPrinterOpts );
-        setDisabled( me.tbConfigOpts );
-        setDisabled( me.tbSorters );
-        setDisabled( me.tbSortersSet );
-        setDisabled( me.tbProtoActions );
 
-        // Cambia el control de las grillas correspondientes
-        // Con el autosync se permite la edicion en todos los controles
-        // if ( this.isDetailCollapsed()  ) {
-            me.protoMasterGrid.setEditMode(  bEdit );
-            // setDisabled( me.tbDetails )
+        if ( ! me.autoEdit )  { 
+            setDisabled( me.tbFilters );
+            setDisabled( me.tbPrinterOpts );
+            setDisabled( me.tbConfigOpts );
+            setDisabled( me.tbSorters );
+            setDisabled( me.tbSortersSet );
+            setDisabled( me.tbProtoActions );
+        } else {
+            bEdit = me.autoEdit; 
+        }
 
-        // } else {
+        me.protoMasterGrid.setEditMode(  bEdit );
 
-            // Solo es la grilla lo q tengo q desabilitar
-            // me.protoMasterGrid._extGrid.setDisabled( bEdit )
+        // Solo es la grilla lo q tengo q desabilitar
+        // me.protoMasterGrid._extGrid.setDisabled( bEdit )
 
-            // Si los detalles estan activos puedo cambiar de detalle sin cambiar el maestro
-            // setDisabled( me.tbDetails, false  )
+        // Si los detalles estan activos puedo cambiar de detalle sin cambiar el maestro
+        // setDisabled( me.tbDetails, false  )
 
-            //Recorrer las grillas, cambiar el modo, TODO: heredados ( Default,  RO )
-            var detGrids = null;
-            try {
-            	detGrids = me.protoTabs.items.items;
-            } 	catch(e) {}
+        //Recorrer las grillas, cambiar el modo, TODO: heredados ( Default,  RO )
+        var detGrids = null;
+        try {
+        	detGrids = me.protoTabs.items.items;
+        } 	catch(e) {}
 
-            if ( detGrids )  {
-	            for (var ix in detGrids ) {
-	                var myDetGrid = detGrids[ix];
-	                if ( ! myDetGrid.detailDefinition ) { continue; } 
-	                myDetGrid.setEditMode( bEdit );
-	                // if ( bEdit ) me.setDetDefaults( me, myDetGrid )
-	            }
-        	}
-
-        // }
+        if ( detGrids )  {
+            for (var ix in detGrids ) {
+                var myDetGrid = detGrids[ix];
+                if ( ! myDetGrid.detailDefinition ) { continue; } 
+                myDetGrid.setEditMode( bEdit );
+                // if ( bEdit ) me.setDetDefaults( me, myDetGrid )
+            }
+    	}
 
         function setDisabled( tbar, bDisable ) {
             // Por defecto es el edit mode

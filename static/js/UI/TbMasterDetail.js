@@ -11,6 +11,8 @@ Ext.define('ProtoUL.UI.TbMasterDetail', {
     // isToolbar: true,
     // baseCls  : Ext.baseCSSPrefix + 'toolbar',
 
+    autoEdit : true, 
+
     initComponent: function() {
 
         var me = this;
@@ -33,7 +35,8 @@ Ext.define('ProtoUL.UI.TbMasterDetail', {
             defaults: {
                 scope: me
             },
-            items: [this.searchBG, {
+            items: [this.searchBG, 
+            {
                 iconCls: 'icon-edit',
                 itemId: 'edit',
                 tooltip: _SM.__language.Grid_Edit_Ttip,
@@ -146,11 +149,11 @@ Ext.define('ProtoUL.UI.TbMasterDetail', {
         // Guarda los permisos
         me.perms = _SM._UserInfo.perms[this.protoMeta.viewCode];
 
-        this.setEditMode(false);
+        this.setEditMode( this.autoEdit );
 
         // permite la edicion
         // if ( _SM._UserInfo.isStaff ) {
-        if (me.perms['add'] || me.perms['change'] || me.perms['delete']) {
+        if ( ! me.autoEdit &&  (me.perms['add'] || me.perms['change'] || me.perms['delete'])) {
             this.getComponent('edit').setVisible(true);
         }
 
@@ -268,18 +271,22 @@ Ext.define('ProtoUL.UI.TbMasterDetail', {
         Ext.suspendLayouts();
 
         // 'edit', 'editOff', 'save', 'autoSync'
-        this.getComponent('edit').setVisible(!bEdit);
-        this.getComponent('editOff').setVisible(bEdit);
+        if ( ! this.autoEdit )  { 
 
-        this.searchBG.setVisible(!bEdit);
+            this.getComponent('edit').setVisible(!bEdit);
+            this.getComponent('editOff').setVisible(bEdit);
 
-        // --------------------- 'details', 'printerOpts', 'sorters', 'tbHelp', 'filterSet',
-        setMdButton(this, 'printerOpts', bEdit);
-        setMdButton(this, 'configOpts', bEdit);
-        setMdButton(this, 'sorters', bEdit);
-        setMdButton(this, 'filterSet', bEdit);
-        setMdButton(this, 'protoActions', bEdit);
-        setMdButton(this, 'sorterSet', bEdit);
+            this.searchBG.setVisible(!bEdit);
+
+            // --------------------- 'details', 'printerOpts', 'sorters', 'tbHelp', 'filterSet',
+            setMdButton(this, 'printerOpts', bEdit);
+            setMdButton(this, 'configOpts', bEdit);
+            setMdButton(this, 'sorters', bEdit);
+            setMdButton(this, 'filterSet', bEdit);
+            setMdButton(this, 'protoActions', bEdit);
+            setMdButton(this, 'sorterSet', bEdit);
+
+        }
 
         // DGT 1303 Con el autosyn, se permite la edicion en todos los objetos
         // setMdButton( this, 'tabSet', bEdit );
