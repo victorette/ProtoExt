@@ -15,8 +15,8 @@ _SM._ROW_ST = {
 // afterLabelTextTpl: _SM._requiredField,
 _SM._requiredField = '<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';
 
-_SM._versionProto = 'Version 1.00.' + _versionMeta;
-_SM._siteTitle = 'CeRTAE';
+_SM._versionProto = '';
+_SM._siteTitle = 'Portrait du logiciel libre dans l\'administration publique de Qu&eacute;bec';
 _SM._siteTitleCollapsed = false;
 
 // Strings and messages moved to locale

@@ -119,13 +119,13 @@ Ext.define('ProtoUL.UI.GridController', {
             width: 30,
             scope: this,
             handler: this.onEditAction
-        // }, {
-        //     itemId: 'toolFormView',
-        //     tooltip: _SM.__language.GridBtn_Ttip_Read_Only,
-        //     type: 'formView',
-        //     width: 20,
-        //     scope: this,
-        //     handler: this.onEditAction
+        }, {
+            itemId: 'toolFormView',
+            tooltip: _SM.__language.GridBtn_Ttip_Read_Only,
+            type: 'formView',
+            width: 20,
+            scope: this,
+            handler: this.onEditAction
             // },{
             // itemId: 'toolRowAdd',
             // tooltip: _SM.__language.GridBtn_Ttip_Add_Row,
