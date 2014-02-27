@@ -66,7 +66,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
@@ -97,8 +97,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-with open('/etc/secret_key.txt') as f:
-    SECRET_KEY = f.read().strip()
+SECRET_KEY = "z7jc&(scfm-c5lt-h#(m*epqis54tc)lxm=g+&5+ud$3w783dx"
     
 
 # A sample logging configuration. The only tangible logging
