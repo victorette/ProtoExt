@@ -91,20 +91,22 @@ Ext.define('ProtoUL.UI.GridController', {
 
     },
 
-    addGridTools: function() {
+    addGridTools: function( editMode ) {
 
-        var editTools = [{
+        var hideTool = ! editMode, editTools;  
+
+        editTools = [{
             itemId: 'toolFormAdd',
             tooltip: _SM.__language.GridBtn_Ttip_Add_Form,
             type: 'formAdd',
             width: 20,
-            hidden: true,
+            hidden: hideTool,
             scope: this,
             handler: this.onEditAction
         }, {
             itemId: 'toolFormUpd',
             tooltip: _SM.__language.GridBtn_Ttip_Edit_Form,
-            hidden: true,
+            hidden: hideTool,
             type: 'formUpd',
             width: 20,
             scope: this,
@@ -113,17 +115,17 @@ Ext.define('ProtoUL.UI.GridController', {
             itemId: 'toolRowDel',
             type: 'rowDel',
             tooltip: _SM.__language.GridBtn_Ttip_Del_Record,
-            hidden: true,
+            hidden: hideTool,
             width: 30,
             scope: this,
             handler: this.onEditAction
-        }, {
-            itemId: 'toolFormView',
-            tooltip: _SM.__language.GridBtn_Ttip_Read_Only,
-            type: 'formView',
-            width: 20,
-            scope: this,
-            handler: this.onEditAction
+        // }, {
+        //     itemId: 'toolFormView',
+        //     tooltip: _SM.__language.GridBtn_Ttip_Read_Only,
+        //     type: 'formView',
+        //     width: 20,
+        //     scope: this,
+        //     handler: this.onEditAction
             // },{
             // itemId: 'toolRowAdd',
             // tooltip: _SM.__language.GridBtn_Ttip_Add_Row,
@@ -136,14 +138,14 @@ Ext.define('ProtoUL.UI.GridController', {
             itemId: 'toolRowCopy',
             tooltip: _SM.__language.GridBtn_Ttip_Copy_Row,
             type: 'rowCopy',
-            hidden: true,
+            hidden: hideTool,
             width: 20,
             scope: this,
             handler: this.onEditAction
         }];
 
         this.myGrid.addTools(editTools);
-        this.setEditMode(false);
+        this.setEditMode( editMode );
 
     },
 
@@ -196,9 +198,9 @@ Ext.define('ProtoUL.UI.GridController', {
         me.setToolMode('#toolFormAdd', bEdit && perms['add'] );
 
         me.setToolMode('#toolFormUpd', bRef && perms['change'] );
-        me.setToolMode('#toolFormView', ! ( bRef && perms['change'] ));
 
         me.setToolMode('#toolRowDel', bRef && perms['delete'] );
+        // me.setToolMode('#toolFormView', ! ( bRef && perms['change'] ));
         // setToolMode ( myExtGrid, '#toolMetaConfig',  !bEdit );
 
     }, 

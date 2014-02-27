@@ -31,6 +31,9 @@ Ext.define('ProtoUL.view.ProtoGrid', {
     colSetDefinition: [],
     colSetCache: {},
 
+    autoEdit : true, 
+    editable : true, 
+
     initComponent: function() {
 
         var me = this;
@@ -140,7 +143,7 @@ Ext.define('ProtoUL.view.ProtoGrid', {
             mode: this.gridSelectionMode
         });
 
-        this.editable = false;
+        this.editable = this.autoEdit ;
 
         // Definie el grid
         var grid;
@@ -252,7 +255,7 @@ Ext.define('ProtoUL.view.ProtoGrid', {
                 store: this.store
             });
         }
-        this.gridController.addGridTools();
+        this.gridController.addGridTools( this.autoEdit );
 
         this.sheetCrl = Ext.create('ProtoUL.UI.GridSheetController', {
             myGrid: this
