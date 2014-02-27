@@ -31,8 +31,8 @@ Ext.define('ProtoUL.view.ProtoGrid', {
     colSetDefinition: [],
     colSetCache: {},
 
-    autoEdit : true, 
-    editable : true, 
+    autoEdit: true,
+    editable: true,
 
     initComponent: function() {
 
@@ -143,7 +143,7 @@ Ext.define('ProtoUL.view.ProtoGrid', {
             mode: this.gridSelectionMode
         });
 
-        this.editable = this.autoEdit ;
+        this.editable = this.autoEdit;
 
         // Definie el grid
         var grid;
@@ -224,7 +224,7 @@ Ext.define('ProtoUL.view.ProtoGrid', {
                             if (stRec === _SM._ROW_ST.NEWROW) {
                                 return stRec;
                             } else if (stRec === _SM._ROW_ST.REFONLY) {
-                                // No cambia el color 
+                                // No cambia el color
                                 return '';
                             } else {
                                 return _SM._ROW_ST.ERROR;
@@ -255,7 +255,7 @@ Ext.define('ProtoUL.view.ProtoGrid', {
                 store: this.store
             });
         }
-        this.gridController.addGridTools( this.autoEdit );
+        this.gridController.addGridTools(this.autoEdit);
 
         this.sheetCrl = Ext.create('ProtoUL.UI.GridSheetController', {
             myGrid: this
@@ -312,7 +312,7 @@ Ext.define('ProtoUL.view.ProtoGrid', {
                 fn: function(view, record, item) {
                     // Esto maneja los tooltip en las las filas
                     var msg = record.get('_ptStatus');
-                    if (msg == _SM._ROW_ST.NEWROW ||  msg == _SM._ROW_ST.REFONLY ) {
+                    if (msg == _SM._ROW_ST.NEWROW || msg == _SM._ROW_ST.REFONLY) {
                         msg = '';
                     }
 
@@ -449,27 +449,25 @@ Ext.define('ProtoUL.view.ProtoGrid', {
 
     fireSelectionChange: function(rowModel, record, rowIndex, eOpts) {
         this.fireEvent('selectionChange', rowModel, record, rowIndex, eOpts);
-        
-        // Condicionar los botones de edicion segun los permisos ( refAllow ) 
-        var perms = _SM._UserInfo.perms[ this.myMeta.viewCode ];  
-        if ( this.editable && record && perms['refallow'] ) {
-            this.verifyEdition( record, perms )
-       }   
-        
-        // Presenta la hoja de informacion en caso de q exista 
+
+        // Condicionar los botones de edicion segun los permisos ( refAllow )
+        var perms = _SM._UserInfo.perms[this.myMeta.viewCode];
+        if (this.editable && record && perms['refallow']) {
+            this.verifyEdition(record, perms)
+        }
+
+        // Presenta la hoja de informacion en caso de q exista
         if (this.IdeSheet) {
             this.sheetCrl.prepareSheet();
         }
     },
 
-    verifyEdition: function(record, perms ) {
-        var me = this, 
-            stRec = record.get('_ptStatus'), 
-            editRestr = (stRec && stRec === _SM._ROW_ST.REFONLY) ; 
+    verifyEdition: function(record, perms) {
+        var me = this, stRec = record.get('_ptStatus'), editRestr = (stRec && stRec === _SM._ROW_ST.REFONLY);
 
-        me.gridController.setEditToolBar( me.editable, !editRestr, perms  ); 
-             
-    }, 
+        me.gridController.setEditToolBar(me.editable, !editRestr, perms);
+
+    },
 
     fireStartEdition: function(editAction) {
         // this.fireEvent('startEdition', this , editAction );
@@ -540,11 +538,8 @@ Ext.define('ProtoUL.view.ProtoGrid', {
 
         // Configurar columnas de la grilla
         // Primero se borran todos exepto el check ( en vez de removeAll() )
-        
-        var hCt = this._extGrid.headerCt, 
-            removeItems = hCt.items.items.slice(), 
-            len0 = removeItems.length - 1, 
-            item, i;
+
+        var hCt = this._extGrid.headerCt, removeItems = hCt.items.items.slice(), len0 = removeItems.length - 1, item, i;
 
         this.suspendLayouts();
         for ( i = 0; i < len0; i++) {
@@ -631,9 +626,8 @@ Ext.define('ProtoUL.view.ProtoGrid', {
 
     getRowIndex: function() {
 
-        var sm = this._extGrid.getSelectionModel(), 
-            rowIndex = this.store.indexOf(sm.getSelection()[0]);
-            
+        var sm = this._extGrid.getSelectionModel(), rowIndex = this.store.indexOf(sm.getSelection()[0]);
+
         if (rowIndex < 0) {
             rowIndex = 0;
         }
@@ -698,4 +692,4 @@ Ext.define('ProtoUL.view.ProtoGrid', {
         }
     }
 
-});
+}); 

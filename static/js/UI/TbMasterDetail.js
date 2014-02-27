@@ -11,7 +11,7 @@ Ext.define('ProtoUL.UI.TbMasterDetail', {
     // isToolbar: true,
     // baseCls  : Ext.baseCSSPrefix + 'toolbar',
 
-    autoEdit : true, 
+    autoEdit: true,
 
     initComponent: function() {
 
@@ -35,8 +35,7 @@ Ext.define('ProtoUL.UI.TbMasterDetail', {
             defaults: {
                 scope: me
             },
-            items: [this.searchBG, 
-            {
+            items: [this.searchBG, {
                 iconCls: 'icon-edit',
                 itemId: 'edit',
                 tooltip: _SM.__language.Grid_Edit_Ttip,
@@ -149,11 +148,11 @@ Ext.define('ProtoUL.UI.TbMasterDetail', {
         // Guarda los permisos
         me.perms = _SM._UserInfo.perms[this.protoMeta.viewCode];
 
-        this.setEditMode( this.autoEdit );
+        this.setEditMode(this.autoEdit);
 
         // permite la edicion
         // if ( _SM._UserInfo.isStaff ) {
-        if ( ! me.autoEdit &&  (me.perms['add'] || me.perms['change'] || me.perms['delete'])) {
+        if (!me.autoEdit && (me.perms['add'] || me.perms['change'] || me.perms['delete'])) {
             this.getComponent('edit').setVisible(true);
         }
 
@@ -271,7 +270,7 @@ Ext.define('ProtoUL.UI.TbMasterDetail', {
         Ext.suspendLayouts();
 
         // 'edit', 'editOff', 'save', 'autoSync'
-        if ( ! this.autoEdit )  { 
+        if (!this.autoEdit) {
 
             this.getComponent('edit').setVisible(!bEdit);
             this.getComponent('editOff').setVisible(bEdit);
@@ -299,6 +298,7 @@ Ext.define('ProtoUL.UI.TbMasterDetail', {
             var bt = me.getComponent(btId);
             bt.setVisible((!bEdit ) && (bt.protoEnable ));
         }
+
 
         Ext.resumeLayouts(true);
 
@@ -364,4 +364,5 @@ Ext.define('ProtoUL.UI.TbMasterDetail', {
             bt.show();
         }
     }
-}); 
+
+});

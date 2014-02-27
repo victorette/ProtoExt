@@ -147,8 +147,8 @@ class Licence(ProtoModel):
         unique_together = ('achronyme_licence',)
 
 class PreRequis(ProtoModel):
-    prere_log = models.ForeignKey('Logiciel', blank= False, null= False, related_name='+')
-    prere_log2 = models.ForeignKey('Logiciel', blank= False, null= False, related_name='+')
+    prere_log = models.ForeignKey('Logiciel', blank= False, null= False, related_name='pr1')
+    prere_log2 = models.ForeignKey('Logiciel', blank= False, null= False, related_name='pr2')
 
     def __unicode__(self):
         return slugify(str( self.prere_log) +  '.' + str( self.prere_log2))
@@ -403,7 +403,7 @@ class Evaluation(ProtoModel):
     resultat_evaluation = models.TextField(blank = True, null = True)
     indice_maturite = models.DecimalField(blank= True, null= True, max_digits=48, decimal_places= 0)
     description_evaluation = models.TextField(blank = True, null = True)
-    log_eva = models.ForeignKey('Logiciel', blank= False, null= False, related_name='+')
+    log_eva = models.ForeignKey('Logiciel', blank= False, null= False )
 
     _autoIncrementField = 'id_evaluation'
     def __unicode__(self):
