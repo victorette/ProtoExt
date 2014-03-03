@@ -8,6 +8,7 @@
 from django.db import models
 from protoLib.models import ProtoModel
 from protoLib.utilsBase import slugify
+from django.core.exceptions import PermissionDenied
 
 
 WORKFLOW = {  'initialStatus' :   'I', 
@@ -591,10 +592,9 @@ class UsageLogiciel(ProtoModel):
 
     def save(self, *args, **kwargs):
         organismeUsage = self.organisme_usage
-        if self.smOwningTeam == organismeUsage.smOwningTeam:
+        if self.smOwningTeam == organismeUsage.smOwningTeam or self.smOwningUser.is_superuser:
             super(UsageLogiciel, self).save(*args, **kwargs)
         else:
-            from django.core.exceptions import PermissionDenied
             raise PermissionDenied('Votre compte n\'appartient pas à l\'organisme public sélectioné.')
 
 class OrganismePublic(ProtoModel):
@@ -603,9 +603,20 @@ class OrganismePublic(ProtoModel):
     mission = models.TextField(blank = True, null = True)
     numero_sct = models.CharField(blank= True, null= True, max_length= 255)
 
-    _WorkFlow =  WORKFLOW
     def __unicode__(self):
         return slugify(self.acronyme)
 
     class Meta:
         unique_together = ('acronyme',)
+        
+    def save(self, *args, **kwargs):
+        user = self.smOwningUser
+        outcome = None
+        try:
+            outcome = OrganismePublic.objects.get(smOwningUser_id=user.id)
+            raise Exception
+        except Exception:
+            if outcome is None or user.is_superuser:
+                super(OrganismePublic, self).save(*args, **kwargs)
+            else:
+                raise PermissionDenied('Votre compte appartient à l\'autre organisme public.')

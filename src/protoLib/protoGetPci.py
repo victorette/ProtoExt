@@ -18,7 +18,7 @@ from prototype.models import Prototype
 PROTO_PREFIX = "prototype.ProtoTable."
 
 
-import django.utils.simplejson as json
+import json
 import traceback
 
 
