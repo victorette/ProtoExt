@@ -14,7 +14,7 @@ if ('/src' in PPATH):
     PPATH = os.path.abspath(os.path.join( PPATH, os.pardir )).replace('\\','/')
 
 # Django settings for modelibra project.
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
   
 ADMINS = (
