@@ -18,6 +18,17 @@ _SM._requiredField = '<span style="color:red;font-weight:bold" data-qtip="Requir
 _SM._versionProto = '';
 _SM._siteTitle = 'Portrait du logiciel libre dans l\'administration publique de Qu&eacute;bec';
 _SM._siteTitleCollapsed = false;
+_SM.footerExtraContent = '<div class="centre">' +
+	'<div id="pied">'+
+		'<div class="confidentialite">'+
+			'<a href="http://www.gouv.qc.ca/portail/quebec/pgs/commun/informationsutiles/confidentialite/?lang=fr">Politique de confidentialit&eacute;</a>'+
+		'</div>'+
+		'<a href="http://www.gouv.qc.ca" title="Lien vers un autre site. Cliquer sur le bouton droit pour l\'ouvrir dans une nouvelle fenetre." target="_Blank"><img src="protoExt/static/img/quebw1.gif" alt="Signature du gouvernement du Qu&eacute;bec." name="logoqc" width="105" height="32" border="0" id="logoqc"/></a>'+
+		'<div class="droits" >'+
+			'&copy; <a href="http://www.droitauteur.gouv.qc.ca/copyright.php" target="_Blank">Gouvernement du Qu&eacute;bec, 2012</a>' +
+		'</div>'+
+	'</div>'+
+'</div>';
 
 // Strings and messages moved to locale
 _SM.__language = {};

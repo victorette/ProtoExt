@@ -36,13 +36,33 @@ Ext.define('ProtoUL.view.Viewport', {
 
         // StatusBar Global
         _SM.__StBar = Ext.create('Ext.ux.StatusBar', {
-                region:'south',
                 split: false,
                 collapsible: false
             });
-
-        return _SM.__StBar;
-
+		var panel2 = Ext.create('Ext.panel.Panel', {
+		    html: _SM.footerExtraContent,
+            margins:'0 0 0 0',
+            border : false,
+            align:'middle',
+            collapsible: true,
+            split: true
+		});
+		var vbox = Ext.create('Ext.panel.Panel', {
+			region:'south',
+			header : false,
+		    collapsible: true,
+		    collapseMode: 'mini',
+			layout: {
+				type: 'vbox',
+				align: 'stretch'
+			},
+			defaults: {
+				bodyStyle: 'padding:15px',
+                split: true
+			},
+			items: [_SM.__StBar, panel2]
+		});
+		return vbox;
     },
 
 
@@ -66,37 +86,30 @@ Ext.define('ProtoUL.view.Viewport', {
 
 
     createHeaderPanel: function () {
-
-        var headerPanel = {
-            region:'north',
-            margins:'0 0 0 0',
+		var content = Ext.create('Ext.panel.Panel', {
+		    html: '<div class="centre"><span class="title">' + _SM._siteTitle + '</span><br><span class="subtitle">' + _SM._versionProto + '</span></div>',
+		    margins:'0 0 0 0',
             border : false,
-            collapsible: true,
-            collapseMode: 'mini',
-
-            collapsed:  _SM._siteTitleCollapsed,
-            header : false,
-            collapsible: true,
-            collapseMode: 'mini',
-            split: true,
-            splitterResize : false,
-
-            layout: {
-                type: 'hbox',
-                align:'middle'
-            },
-            items:[{
-                 margins:'5 5',
-                 xtype: 'box',
-                 html: '<span class="title">' + _SM._siteTitle + '</span><br><span class="subtitle">' + _SM._versionProto + '</span>',
-                 height: 56,
-                 handler: function () {
-                     headerPanel.collapse();
-                 }
-            }]
-
-        };
-
+            align:'middle',
+            split: true
+		});
+		var headerPanel = Ext.create('Ext.panel.Panel', {
+			region:'north',
+			header : false,
+		    collapsible: true,
+		    collapseMode: 'mini',
+		    collapsed:  _SM._siteTitleCollapsed,
+		    height: 90,
+			layout: {
+				type: 'vbox',
+				align: 'stretch'
+			},
+			defaults: {
+				bodyStyle: 'padding:15px',
+                split: true
+			},
+			items: [content]
+		});
         return headerPanel;
     },
 
