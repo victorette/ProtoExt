@@ -21,11 +21,11 @@ _SM._siteTitleCollapsed = false;
 _SM.footerExtraContent = '<div class="centre">' +
 	'<div id="pied">'+
 		'<div class="confidentialite">'+
-			'<a href="http://www.gouv.qc.ca/portail/quebec/pgs/commun/informationsutiles/confidentialite/?lang=fr">Politique de confidentialit&eacute;</a>'+
+			'<a href="http://www.gouv.qc.ca/portail/quebec/pgs/commun/informationsutiles/confidentialite/?lang=fr" target="_Blank">Politique de confidentialit&eacute;</a>'+
 		'</div>'+
 		'<a href="http://www.gouv.qc.ca" title="Lien vers un autre site. Cliquer sur le bouton droit pour l\'ouvrir dans une nouvelle fenetre." target="_Blank"><img src="protoExt/static/img/quebw1.gif" alt="Signature du gouvernement du Qu&eacute;bec." name="logoqc" width="105" height="32" border="0" id="logoqc"/></a>'+
 		'<div class="droits" >'+
-			'&copy; <a href="http://www.droitauteur.gouv.qc.ca/copyright.php" target="_Blank">Gouvernement du Qu&eacute;bec, 2012</a>' +
+			'&copy; <a href="http://www.droitauteur.gouv.qc.ca/copyright.php" target="_Blank">Gouvernement du Qu&eacute;bec, 2014</a>' +
 		'</div>'+
 	'</div>'+
 '</div>';

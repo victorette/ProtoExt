@@ -50,8 +50,6 @@ Ext.define('ProtoUL.view.Viewport', {
 		var vbox = Ext.create('Ext.panel.Panel', {
 			region:'south',
 			header : false,
-		    collapsible: true,
-		    collapseMode: 'mini',
 			layout: {
 				type: 'vbox',
 				align: 'stretch'

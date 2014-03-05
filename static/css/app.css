@@ -1,7 +1,7 @@
 
 .title {
     font-family: Arial, sans-serif;
-    color: #596F8F;
+    color: #000000;
     font-size: 22px;
     font-weight: 200;
     /*margin-left: 15em;*/
@@ -354,4 +354,9 @@
 .centre {text-align:center ! important;}
 #pied, .date {font:10px Verdana, Geneva, Helvetica, sans-serif;}
 .confidentialite {font-size:11px ! important;}
+
+/*** Liens ***/
+a:link {color:#677AB5;}
+a:visited {color:#778AA5;}
+a:hover, a:active {color:#00B0F0;}
 /*  --------------------------------------------------------------  */
