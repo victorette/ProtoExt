@@ -614,7 +614,10 @@ class OrganismePublic(ProtoModel):
         outcome = None
         try:
             outcome = OrganismePublic.objects.get(smOwningUser_id=user.id)
-            raise Exception
+            if outcome.id == self.id or user.is_superuser:
+                super(OrganismePublic, self).save(*args, **kwargs)
+            else:
+                raise Exception
         except Exception:
             if outcome is None or user.is_superuser:
                 super(OrganismePublic, self).save(*args, **kwargs)
