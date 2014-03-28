@@ -17,6 +17,7 @@ _SM._requiredField = '<span style="color:red;font-weight:bold" data-qtip="Requir
 
 _SM._versionProto = '';
 _SM._siteTitle = 'Portrait du logiciel libre dans l\'administration publique de Qu&eacute;bec';
+_SM.loginTitle = 'ART - Identification';
 _SM._siteTitleCollapsed = false;
 _SM.footerExtraContent = '<div class="centre">' +
 	'<div id="pied">'+
