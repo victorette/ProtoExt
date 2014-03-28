@@ -83,7 +83,7 @@ Ext.application({
         var myWin  = Ext.widget('window', {
             constrain: true, 
             iconCls: 'st-user-who',
-            title: 'ART - Identification',
+            title: _SM.loginTitle,
             layout: 'fit',
             
             width: 450,
