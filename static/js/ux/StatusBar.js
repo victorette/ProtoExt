@@ -296,7 +296,7 @@ Ext.define('ProtoUL.ux.StatusBar', {
 
         // console.log( 'error :' + origin  ,  text )
         this.setStatus({
-            text: 'Oops! ' + text ,
+            text: 'Erreur! ' + text ,
             iconCls: 'x-status-error',
             clear: true 
         });
