@@ -30,7 +30,7 @@ __language ={
     'Msg_Saved' : 'Saving changes...',
     'Msg_Deleted_Event' : 'Deleting event...',
 
-    'Msg_Invalid_Form' : 'OOPs!! Form is not valid',
+    'Msg_Invalid_Form' : 'Error!! Form is not valid',
     'Msg_Error_Save_Form' : 'Save form Failed',
     'Msg_Failed_Operation' : 'Operation failure',
     'Msg_Confirm_Delete_Operation' : 'Are you sure?',
