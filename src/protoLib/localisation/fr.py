@@ -30,7 +30,7 @@ __language ={
     'Msg_Saved' : 'Enregistrement des modifications ...',
     'Msg_Deleted_Event' : "Suppression événement ...",
     
-    'Msg_Invalid_Form' : "OOPS! Formulaire non valide",
+    'Msg_Invalid_Form' : "Erreur! Formulaire non valide",
     'Msg_Error_Save_Form' : 'Enregistrer le formulaire échoué',
     'Msg_Failed_Operation' : "Opération échouée",
     'Msg_Confirm_Delete_Operation' : 'Etes-vous sûr?',
