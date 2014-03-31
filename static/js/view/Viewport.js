@@ -85,7 +85,7 @@ Ext.define('ProtoUL.view.Viewport', {
 
     createHeaderPanel: function () {
 		var content = Ext.create('Ext.panel.Panel', {
-		    html: '<div class="centre"><span class="title">' + _SM._siteTitle + '</span><br><span class="subtitle">' + _SM._versionProto + '</span></div>',
+		    html: _SM._siteTitle,
 		    margins:'0 0 0 0',
             border : false,
             align:'middle',

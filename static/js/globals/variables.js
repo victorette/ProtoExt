@@ -16,7 +16,21 @@ _SM._ROW_ST = {
 _SM._requiredField = '<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';
 
 _SM._versionProto = '';
-_SM._siteTitle = 'Portrait du logiciel libre dans l\'administration publique de Qu&eacute;bec';
+_SM._siteTitle = '<div class="top-piv">'+
+    '<div class="menu-piv"></div>'+
+    '<div class="piv">'+
+        '<div class="logo">'+
+            '<img src="http://www.cspq.gouv.qc.ca/images/commun/entete/CSPw3.gif" />'+
+        '</div>'+
+        '<div class="content">'+
+            '<div class="title">'+
+                'Portrait du logiciel libre dans l\'administration publique de Québec'+
+            '</div>'+
+            '<div class="subtitle"></div>'+
+        '</div>'+
+    '</div>'+
+'</div>';
+
 _SM.loginTitle = 'Identification – portrait du logiciel au gouvernement du Québec';
 _SM._siteTitleCollapsed = false;
 _SM.footerExtraContent = '<div class="centre">' +
