@@ -20,11 +20,9 @@ _SM._siteTitle = '<div class="top-piv">'+
     '<div class="menu-piv"></div>'+
     '<div class="piv">'+
         '<div class="logo">'+
-            '<img src="http://www.cspq.gouv.qc.ca/images/commun/entete/CSPw3.gif" />'+
         '</div>'+
         '<div class="content">'+
             '<div class="title">'+
-                'Portrait du logiciel libre dans l\'administration publique de Québec'+
             '</div>'+
             '<div class="subtitle"></div>'+
         '</div>'+
