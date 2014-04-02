@@ -392,7 +392,7 @@ class Expert(ProtoModel):
 
 class HistoriqueUtilisateurs(ProtoModel):
     date_renseignements = models.CharField(blank= True, null= True, max_length= 255)
-    date_de_saisie = models.DateTimeField(blank = True, null = True)
+    date_de_saisie = models.DateField(blank = True, null = True)
     identifiant_nombre_utilisateurs = models.IntegerField(blank = False, null = False)
     nombre_utilisateurs = models.IntegerField(blank = True, null = True)
     usage_nombre_utilisateurs = models.ForeignKey('UsageLogiciel', blank= False, null= False)
@@ -405,7 +405,7 @@ class HistoriqueUtilisateurs(ProtoModel):
         unique_together = ('identifiant_nombre_utilisateurs','usage_nombre_utilisateurs',)
 
 class HistoriqueInstances(ProtoModel):
-    date_de_saisie = models.DateTimeField(blank = True, null = True)
+    date_de_saisie = models.DateField(blank = True, null = True)
     date_renseignements = models.CharField(blank= True, null= True, max_length= 255)
     identifiant_nombre_instances = models.IntegerField(blank = False, null = False)
     nombre_instances = models.IntegerField(blank = True, null = True)
