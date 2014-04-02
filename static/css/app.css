@@ -1,9 +1,8 @@
-
 .top-piv {
     width: 760px;
     position: relative;
-  	margin-left: auto ;
-  	margin-right: auto ;
+    margin-left: auto ;
+    margin-right: auto ;
 }
 .menu-piv {
     width: 550px;
@@ -20,7 +19,7 @@
     width:760px;
     height:89px;
     background-image:url('http://www2.publicationsduquebec.gouv.qc.ca/portefolio/images/bandeau.png');
-    background-size:280px 60px;
+    background-size:300px 60px;
     background-repeat:no-repeat;
     background-position:right top; 
 }
@@ -28,6 +27,9 @@
     height:89px;
     width:210px;
     float:left;
+    background-image:url('http://www.cspq.gouv.qc.ca/images/commun/entete/CSPw3.gif');
+    background-repeat:no-repeat;
+    background-position:center;
 }
 .piv .content {
     height:89px;
