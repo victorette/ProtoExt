@@ -27,7 +27,7 @@
     height:89px;
     width:210px;
     float:left;
-    background-image:url('http://www.cspq.gouv.qc.ca/images/commun/entete/CSPw3.gif');
+    background-image:url('../img/logo.png');
     background-repeat:no-repeat;
     background-position:center;
 }
