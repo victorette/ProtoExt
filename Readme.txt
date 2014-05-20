@@ -4,7 +4,7 @@ How to begin
 Aptana Stuio 
 
 File - Import - Git Repository 
-	URI	 :  https://github.com/certae/ProtoExt
+	URI	 :  https://github.com/victorette/ProtoExt/tree/CELL
 	HOME : 
 	
 
