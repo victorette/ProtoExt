@@ -29,7 +29,7 @@ _SM._siteTitle = '<div class="top-piv">'+
     '</div>'+
 '</div>';
 
-_SM.loginTitle = 'Identification – portrait du logiciel au gouvernement du Québec';
+_SM.loginTitle = 'Identification – portrait du logiciel libre au gouvernement du Québec';
 _SM._siteTitleCollapsed = false;
 _SM.footerExtraContent = '<div class="centre">' +
 	'<div id="pied">'+

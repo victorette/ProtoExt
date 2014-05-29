@@ -149,6 +149,7 @@ Ext.define('ProtoUL.ux.Login', {
             focusOnToFront: true,
             autoHide: true,
             stateful: false,
+            bodyStyle: 'background:#ffc;',
             getTargetXY: function() {
                 var resetButton = Ext.getCmp('resetButton');
                 var x = resetButton.getPosition()[0];
