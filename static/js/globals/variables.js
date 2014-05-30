@@ -17,7 +17,14 @@ _SM._requiredField = '<span style="color:red;font-weight:bold" data-qtip="Requir
 
 _SM._versionProto = '';
 _SM._siteTitle = '<div class="top-piv">'+
-    '<div class="menu-piv"></div>'+
+    '<div class="menu-piv">'+
+    	'<div class="alignleft">'+
+            '<nav class="pivHautMenu">&nbsp;'+
+                '<a href="#" onclick="openHelp();" class="piv-link">Aide</a>'+
+            '</nav>'+
+        '</div>'+
+        '<div class="alignright">v. 1.02</div>'+
+    '</div>'+
     '<div class="piv">'+
         '<div class="logo">'+
         '</div>'+
