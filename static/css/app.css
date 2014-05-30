@@ -23,6 +23,23 @@
     background-repeat:no-repeat;
     background-position:right top; 
 }
+.menu-piv .alignleft {
+	float: left;
+    color:white;
+}
+.menu-piv .alignright {
+	float: right;
+    color:white;
+}
+.piv-link {
+    font-size: medium;
+    color:white;
+    text-decoration: none;
+}
+.pivHautMenu a:hover, .pivHautMenu a:focus, .pivHautMenu a:active {
+    background: none;
+    text-decoration: underline;
+}
 .piv .logo {
     height:89px;
     width:210px;
