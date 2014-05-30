@@ -513,7 +513,9 @@ _SM.Product  = function (list) {
     }
 };
 
-
+openHelp = function() {
+    window.open(_SM._HELPpath, 'protoHelp', 'left=50,top=20,width=1000,height=600,resizable=0,scrollbars=yes');
+}
 // String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g, '');};
 // String.prototype.ltrim=function(){return this.replace(/^\s+/,'');};
 // String.prototype.rtrim=function(){return this.replace(/\s+$/,'');};
