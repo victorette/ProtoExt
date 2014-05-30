@@ -6,9 +6,9 @@
 }
 .menu-piv {
     width: 550px;
-    height: 12px;
-    padding: 1px 0 4px 0;
-    top: 52px;
+    height: 14px;
+    padding: 0px 0 4px 0;
+    top: 50px;
     right: 0;
     color: #000;
     background-color: #083393;
@@ -24,21 +24,23 @@
     background-position:right top; 
 }
 .menu-piv .alignleft {
-	float: left;
+    float: left;
     color:white;
 }
 .menu-piv .alignright {
-	float: right;
+    float: right;
     color:white;
+    font-size: 12px;
 }
 .piv-link {
-    font-size: medium;
+    font-size: 12px;
     color:white;
     text-decoration: none;
 }
 .pivHautMenu a:hover, .pivHautMenu a:focus, .pivHautMenu a:active {
     background: none;
     text-decoration: underline;
+    cursor: pointer;
 }
 .piv .logo {
     height:89px;
