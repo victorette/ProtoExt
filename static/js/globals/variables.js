@@ -20,7 +20,7 @@ _SM._siteTitle = '<div class="top-piv">'+
     '<div class="menu-piv">'+
     	'<div class="alignleft">'+
             '<nav class="pivHautMenu">&nbsp;'+
-                '<a href="#" onclick="openHelp();" class="piv-link">Aide</a>'+
+                '<a onclick="openHelp();" class="piv-link">Aide</a>'+
             '</nav>'+
         '</div>'+
         '<div class="alignright">v. 1.02</div>'+
